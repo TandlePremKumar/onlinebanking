@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8"/>
+<title>this is home page</title>
+</head>
+<body>
+<section>
+<div class="card mr-3 ml-3">
+
+<div class="card-body">
+
+<h1 class="text-center">Your Cards</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Cid</th>
+      <th scope="col">Type</th>
+      <th scope="col">Phone no</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr th:each="c :${cards}">
+      <th scope="row" th:text="${'SCM2020'+c.cardid}">1</th>
+      <td th:text="${c.cardid}">Mark</td>
+      <td th:text="${c.type}">Otto</td>
+      <td  th:text="${c.phone}">@mdo</td>
+      <td  th:text="${c.address}">@mdo</td>
+      <td>
+      <button class="btn btn-danger btn-0 btn-small">clear</button>
+      <button class="btn btn-primary btn-0 btn-small">update</button>
+      
+      </td>
+      
+    </tr>
+    
+   
+  </tbody>
+</table>
+
+
+
+</div>
+
+</div>
+</section>
+</body>
+</html>
